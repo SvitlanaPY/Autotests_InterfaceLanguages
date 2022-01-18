@@ -16,3 +16,8 @@ def test_check_basket_button_exists(browser):
     button = browser.find_element(By.XPATH, '//button[@class="btn btn-lg btn-primary btn-add-to-basket" and @type="submit"]')
     # button = browser.find_element(By.XPATH, '//button[@class="btnnnnn btn-lg btn-primary btn-add-to-basket"]')
     assert button is not None
+
+# Можно было все запихнуть в один assert, без дополнительных переменных, с проверкой видимости, но так тоже можно.
+# Пример:
+# assert expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, 'button.btn-add-to-basket')), 'Cannot locate button on page' expected_conditions
+# вернет True, если кнопка есть и видима, и False, если кнопки нет - assert встретив False выбросит исключение.
